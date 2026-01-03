@@ -20,6 +20,7 @@
           ps:
             with ps; [
               discordpy
+              tailscale
               python-dotenv
             ]
         );
