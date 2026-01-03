@@ -3,12 +3,12 @@ name: Build & Push Docker image
 on:
   push:
     branches: [ main ]
-
-inputs:
-  tag:
-    required: false
-    type: string
-    default: "latest"
+  workflow_dispatch:
+    inputs:
+      tag:
+        required: false
+        type: string
+        default: 'latest'
 
 jobs:
   build:
@@ -32,4 +32,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: "${{ secrets.DOCKER_USERNAME }}/${{ vars.REPO_NAME }}:${{ inputs.tag }}"
+        tags: "${{ secrets.DOCKER_USERNAME }}/${{ vars.REPO_NAME }}:${{ inputs.tag || 'latest' }}"
