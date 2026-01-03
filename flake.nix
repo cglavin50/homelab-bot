@@ -22,6 +22,7 @@
               discordpy
               tailscale
               python-dotenv
+              pip # for requirements.txt
             ]
         );
       in {
