@@ -44,7 +44,7 @@ async def get_invite() -> str:
             data = json.loads(json_str)
             return data[0]["inviteUrl"]
         except:
-            raise RuntimeError("Unknown error from tailscale")
+            return "Unknown error from tailscale, see Admin Console for details"
 
 
 # Discord Config
